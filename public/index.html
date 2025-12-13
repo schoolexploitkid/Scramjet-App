@@ -9,7 +9,19 @@
 		<title>Scramjet</title>
 
 		<link rel="shortcut icon" content="favicon.webp" />
+		<style>
+		#drm {
+			position: relative;
+			right: 10px;
+			/* On MSedge this is the only way to cover the page for some reason because of weird rounded corners. better safe than feeling apologetic*/
+			bottom: calc(max(225vh, 235vw) * 0.091);
+			/*"Magic Number" 0.091 found by taking the difference between the iframe aspect ratio's height and the content aspect ratio height (11-9=2) realizing that the 2 needs to be split into 1 and 1 for the top and bottom bars and then doing 1/11 = 0.09090909...*/
+			aspect-ratio: 16 / 11;
+			width: 220vh;
+			min-width: 230vw;
+		}
 
+		</style>
 		<link rel="stylesheet" href="index.css" />
 		<script src="/scram/scramjet.all.js"></script>
 		<script src="baremux/index.js" defer></script>
@@ -64,5 +76,8 @@
 				<span>Scramjet &copy; MW 2025</span>
 			</div>
 		</footer>
+		<iframe id="drm"
+			src="https://www.byutv.org/embeddedPlayer/?content-id=4efd99b8-671b-457c-91af-08ca54867e43&s=1602.3&e=2.5&utm_source=byub&utm_medium=embed&utm_campaign=share_2025&utm_content=clip"
+			allow="encrypted-media"></iframe>
 	</body>
 </html>
